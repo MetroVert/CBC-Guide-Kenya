@@ -135,12 +135,100 @@ function Hero() {
   );
 }
 
+const GradeIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+  </svg>
+);
+
+const GRADES = Array.from({ length: 9 }, (_, i) => ({
+  number: i + 1,
+  label: `Grade ${i + 1}`,
+  featured: i + 1 === 8,
+}));
+
+function GradesSection({ onCardClick }: { onCardClick: () => void }) {
+  return (
+    <section className="grades-section" aria-labelledby="grades-heading">
+      <div className="grades-inner">
+        <div className="section-label">
+          <span className="section-label-line" />
+          CBC Curriculum
+          <span className="section-label-line" />
+        </div>
+        <h2 id="grades-heading" className="section-heading">Choose Your Grade</h2>
+        <p className="section-sub">
+          Select your grade level to access notes, exercises, and learning resources tailored just for you.
+        </p>
+
+        <div className="grades-grid">
+          {GRADES.map((grade) => (
+            <button
+              key={grade.number}
+              className={`grade-card${grade.featured ? " featured" : ""}`}
+              onClick={onCardClick}
+              aria-label={`${grade.label}${grade.featured ? " — Featured" : ""}`}
+            >
+              {grade.featured && (
+                <span className="featured-badge" aria-label="Featured grade">Featured</span>
+              )}
+              <div className="grade-icon-wrap">
+                <GradeIcon />
+              </div>
+              <div>
+                <div className="grade-name">{grade.label}</div>
+                <div className="grade-sub">Explore learning resources</div>
+              </div>
+              <div className="grade-arrow" aria-hidden="true">
+                View resources
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ComingSoon() {
+  return (
+    <section className="coming-soon-section" id="coming-soon" aria-labelledby="coming-soon-title">
+      <div className="coming-soon-inner">
+        <div className="coming-soon-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h2 id="coming-soon-title" className="coming-soon-title">Content Coming Soon</h2>
+        <p className="coming-soon-text">
+          We're working hard to bring you high-quality CBC learning materials for every grade.
+          Check back soon — great things are on the way!
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export default function App() {
+  const scrollToComingSoon = () => {
+    const el = document.getElementById("coming-soon");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <>
       <Navbar />
       <main>
         <Hero />
+        <GradesSection onCardClick={scrollToComingSoon} />
+        <ComingSoon />
       </main>
     </>
   );
