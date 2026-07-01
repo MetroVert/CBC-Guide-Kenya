@@ -21,9 +21,16 @@ function Navbar() {
           {/* Logo */}
           <a href="#" className="logo" aria-label="CBC Guide Kenya">
             <div className="logo-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
               </svg>
             </div>
             <div className="logo-text">
@@ -39,7 +46,10 @@ function Navbar() {
                 <a
                   href="#"
                   className={item === active ? "active" : ""}
-                  onClick={(e) => { e.preventDefault(); setActive(item); }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActive(item);
+                  }}
                 >
                   {item}
                 </a>
@@ -94,22 +104,33 @@ function Hero() {
         </div>
 
         <h1 id="hero-heading" className="hero-heading">
-          Everything{" "}
-          <span className="highlight-green">CBC</span>{" "}
-          in{" "}
+          Everything <span className="highlight-green">CBC</span> in{" "}
           <span className="highlight-blue">One Place</span>
         </h1>
 
         <p className="hero-subtitle">
-          Your complete guide to the Kenyan CBC curriculum — organised notes, past papers,
-          and learning resources for every grade and subject, all in one place.
+          Your complete guide to the Kenyan CBC curriculum guides— organised
+          notes, questions & other learning resources for every grade and
+          subject, all in one place.
         </p>
 
         <div className="hero-actions">
-          <a href="#" className="btn-primary" onClick={(e) => e.preventDefault()}>
+          <a
+            href="#"
+            className="btn-primary"
+            onClick={(e) => e.preventDefault()}
+          >
             Explore Grade 8
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
         </div>
@@ -136,9 +157,17 @@ function Hero() {
 }
 
 const GradeIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+    <path d="M6 12v5c3 3 9 3 12 0v-5" />
   </svg>
 );
 
@@ -157,9 +186,12 @@ function GradesSection({ onCardClick }: { onCardClick: () => void }) {
           CBC Curriculum
           <span className="section-label-line" />
         </div>
-        <h2 id="grades-heading" className="section-heading">Choose Your Grade</h2>
+        <h2 id="grades-heading" className="section-heading">
+          Choose Your Grade
+        </h2>
         <p className="section-sub">
-          Select your grade level to access notes, exercises, and learning resources tailored just for you.
+          Select your grade level to access notes, exercises, and learning
+          resources tailored just for you.
         </p>
 
         <div className="grades-grid">
@@ -171,7 +203,9 @@ function GradesSection({ onCardClick }: { onCardClick: () => void }) {
               aria-label={`${grade.label}${grade.featured ? " — Featured" : ""}`}
             >
               {grade.featured && (
-                <span className="featured-badge" aria-label="Featured grade">Featured</span>
+                <span className="featured-badge" aria-label="Featured grade">
+                  Featured
+                </span>
               )}
               <div className="grade-icon-wrap">
                 <GradeIcon />
@@ -182,8 +216,15 @@ function GradesSection({ onCardClick }: { onCardClick: () => void }) {
               </div>
               <div className="grade-arrow" aria-hidden="true">
                 View resources
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </div>
             </button>
@@ -196,18 +237,32 @@ function GradesSection({ onCardClick }: { onCardClick: () => void }) {
 
 function ComingSoon() {
   return (
-    <section className="coming-soon-section" id="coming-soon" aria-labelledby="coming-soon-title">
+    <section
+      className="coming-soon-section"
+      id="coming-soon"
+      aria-labelledby="coming-soon-title"
+    >
       <div className="coming-soon-inner">
         <div className="coming-soon-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
           </svg>
         </div>
-        <h2 id="coming-soon-title" className="coming-soon-title">Content Coming Soon</h2>
+        <h2 id="coming-soon-title" className="coming-soon-title">
+          Content Coming Soon
+        </h2>
         <p className="coming-soon-text">
-          We're working hard to bring you high-quality CBC learning materials for every grade.
-          Check back soon — great things are on the way!
+          We're working hard to bring you high-quality CBC content & learning
+          materials for every grade. Check back soon — great things are on the
+          way!
         </p>
       </div>
     </section>

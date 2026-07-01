@@ -10,7 +10,7 @@ Create Kenya's most trusted and easy-to-use CBC learning platform for students, 
 ## Homepage
 - [x] Navigation Bar
 - [x] Hero Section
-- [ ] Grade Selection
+- [x] Grade Selection
 - [ ] Grade 8 Page
 - [ ] Subject Cards
 - [ ] Mathematics Page
