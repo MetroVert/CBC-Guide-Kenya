@@ -14,9 +14,16 @@ const NAV_ITEMS = [
 ];
 
 const LogoIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
   </svg>
 );
 
@@ -32,7 +39,9 @@ function Navbar() {
   }, []);
 
   // Close mobile menu on navigation
-  useEffect(() => { setMenuOpen(false); }, [location]);
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
 
   const isActive = (href: string) => {
     if (href === "/") return location === "/";
@@ -44,7 +53,9 @@ function Navbar() {
       <nav className={`nav${scrolled ? " scrolled" : ""}`}>
         <div className="nav-inner">
           <Link href="/" className="logo" aria-label="CBC Guide Kenya">
-            <div className="logo-icon"><LogoIcon /></div>
+            <div className="logo-icon">
+              <LogoIcon />
+            </div>
             <div className="logo-text">
               <span className="logo-name">CBC Guide</span>
               <span className="logo-sub">Kenya</span>
@@ -70,7 +81,9 @@ function Navbar() {
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
           >
-            <span /><span /><span />
+            <span />
+            <span />
+            <span />
           </button>
         </div>
 
@@ -108,14 +121,23 @@ function Hero() {
 
         <p className="hero-subtitle">
           Your complete guide to the Kenyan CBC curriculum — organised notes,
-          questions &amp; learning resources for every grade and subject, all in one place.
+          questions &amp; learning resources for every grade and subject, all in
+          one place.
         </p>
 
         <div className="hero-actions">
           <Link href="/grades/grade-8" className="btn-primary">
             Explore Grade 8
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>
         </div>
@@ -142,9 +164,17 @@ function Hero() {
 }
 
 const GradeIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+    <path d="M6 12v5c3 3 9 3 12 0v-5" />
   </svg>
 );
 
@@ -169,9 +199,12 @@ function GradesSection() {
           CBC Curriculum
           <span className="section-label-line" />
         </div>
-        <h2 id="grades-heading" className="section-heading">Choose Your Grade</h2>
+        <h2 id="grades-heading" className="section-heading">
+          Choose Your Grade
+        </h2>
         <p className="section-sub">
-          Select your grade level to access notes, exercises, and learning resources tailored just for you.
+          Select your grade level to access notes, exercises, and learning
+          resources tailored just for you.
         </p>
 
         <div className="grades-grid">
@@ -184,15 +217,24 @@ function GradesSection() {
                 aria-label={`${grade.label} — Featured`}
               >
                 <span className="featured-badge">Featured</span>
-                <div className="grade-icon-wrap"><GradeIcon /></div>
+                <div className="grade-icon-wrap">
+                  <GradeIcon />
+                </div>
                 <div>
                   <div className="grade-name">{grade.label}</div>
                   <div className="grade-sub">Explore learning resources</div>
                 </div>
                 <div className="grade-arrow" aria-hidden="true">
                   View resources
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
               </Link>
@@ -203,19 +245,28 @@ function GradesSection() {
                 onClick={scrollToComingSoon}
                 aria-label={grade.label}
               >
-                <div className="grade-icon-wrap"><GradeIcon /></div>
+                <div className="grade-icon-wrap">
+                  <GradeIcon />
+                </div>
                 <div>
                   <div className="grade-name">{grade.label}</div>
                   <div className="grade-sub">Explore learning resources</div>
                 </div>
                 <div className="grade-arrow" aria-hidden="true">
                   View resources
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
               </button>
-            )
+            ),
           )}
         </div>
       </div>
@@ -225,18 +276,32 @@ function GradesSection() {
 
 function ComingSoon() {
   return (
-    <section className="coming-soon-section" id="coming-soon" aria-labelledby="coming-soon-title">
+    <section
+      className="coming-soon-section"
+      id="coming-soon"
+      aria-labelledby="coming-soon-title"
+    >
       <div className="coming-soon-inner">
         <div className="coming-soon-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
           </svg>
         </div>
-        <h2 id="coming-soon-title" className="coming-soon-title">Content Coming Soon</h2>
+        <h2 id="coming-soon-title" className="coming-soon-title">
+          Content Coming Soon
+        </h2>
         <p className="coming-soon-text">
-          We're working hard to bring you high-quality CBC content &amp; learning materials
-          for every grade. Check back soon — great things are on the way!
+          We're working hard to bring you high-quality CBC content &amp;
+          learning materials for every grade. Check back soon — great things are
+          on the way!
         </p>
       </div>
     </section>
