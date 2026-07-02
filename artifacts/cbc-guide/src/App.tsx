@@ -314,7 +314,7 @@ function HomePage() {
       <Hero />
       <GradesSection />
       <ComingSoon />
-      
+
       <footer
         style={{
           textAlign: "center",
@@ -336,6 +336,18 @@ function Grade8Layout() {
   return (
     <main className="inner-page">
       <Grade8Page />
+      <footer
+        style={{
+          textAlign: "center",
+          padding: "40px 20px",
+          color: "#6b7280",
+          fontSize: "14px",
+          borderTop: "1px solid #e5e7eb",
+          marginTop: "60px",
+        }}
+      >
+        Designed & Developed by <strong>MetroVert</strong>
+      </footer>
     </main>
   );
 }
@@ -344,6 +356,18 @@ function SubjectLayout() {
   return (
     <main className="inner-page">
       <SubjectDetailPage />
+      <footer
+        style={{
+          textAlign: "center",
+          padding: "40px 20px",
+          color: "#6b7280",
+          fontSize: "14px",
+          borderTop: "1px solid #e5e7eb",
+          marginTop: "60px",
+        }}
+      >
+        Designed & Developed by <strong>MetroVert</strong>
+      </footer>
     </main>
   );
 }
