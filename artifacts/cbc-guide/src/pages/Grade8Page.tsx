@@ -336,10 +336,10 @@ export default function Grade8Page() {
           <h1 className="grade-page-title">Grade 8 Subjects &amp; Resources</h1>
           <p className="grade-page-intro">
             Welcome to your Grade 8 hub! This is where Junior Secondary gets
-            serious — and exciting. You're building on everything you learned in
+            serious — and exciting. You are building on everything you learned in
             primary, diving deeper into science, language, and technology. Pick
             a subject below to access organised notes, practice questions, and
-            learning activities crafted to match the CBC curriculum. Every
+            learning activities crafted to match the required CBC curriculum. Every
             resource here is mapped to your learning outcomes, so you study
             smarter, not harder.
           </p>
