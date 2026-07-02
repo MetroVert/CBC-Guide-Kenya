@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Router, Route, Link, useLocation } from "wouter";
 import Grade8Page from "./pages/Grade8Page";
-import SubjectPage from "./pages/SubjectPage";
+import SubjectDetailPage from "./pages/SubjectDetailPage";
 import "./index.css";
 
 /* ─── Shared: Navbar ────────────────────────────────────── */
@@ -330,7 +330,7 @@ function Grade8Layout() {
 function SubjectLayout() {
   return (
     <main className="inner-page">
-      <SubjectPage />
+      <SubjectDetailPage />
     </main>
   );
 }
