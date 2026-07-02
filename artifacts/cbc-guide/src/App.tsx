@@ -314,6 +314,19 @@ function HomePage() {
       <Hero />
       <GradesSection />
       <ComingSoon />
+      
+      <footer
+        style={{
+          textAlign: "center",
+          padding: "40px 20px",
+          color: "#6b7280",
+          fontSize: "14px",
+          borderTop: "1px solid #e5e7eb",
+          marginTop: "60px",
+        }}
+      >
+        Designed & Developed by <strong>MetroVert</strong>
+      </footer>
     </main>
   );
 }
