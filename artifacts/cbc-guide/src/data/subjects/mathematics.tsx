@@ -1,8 +1,15 @@
 import type { SubjectContent } from "../../types/subject";
 
 const MathIcon = (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
   </svg>
 );
 
@@ -23,42 +30,157 @@ export const mathematicsContent: SubjectContent = {
     "Collect, organise, and interpret data using statistical measures and basic probability",
   ],
   topics: [
-    { title: "Cubes and Cube Roots", description: "Finding cubes and cube roots of numbers, and applying them in practical contexts." },
-    { title: "Reciprocals", description: "Understanding reciprocals of numbers and using them in computations." },
-    { title: "Ratio, Proportion & Percentage", description: "Working with ratios, direct and inverse proportion, and percentage change." },
-    { title: "Algebraic Expressions", description: "Simplifying, expanding, and factorising expressions with two or more variables." },
-    { title: "Linear Equations & Inequalities", description: "Solving and graphing linear equations and inequalities in one variable." },
-    { title: "Sequences and Patterns", description: "Identifying number patterns and finding terms in arithmetic sequences." },
-    { title: "Length, Area & Volume", description: "Calculating perimeter, area, and volume of composite 2D and 3D shapes." },
-    { title: "Angles & Geometric Constructions", description: "Measuring, constructing, and applying angle properties in geometric figures." },
-    { title: "Data Handling & Probability", description: "Organising data, computing averages, and understanding basic probability." },
+    {
+      title: "Cubes and Cube Roots",
+      description:
+        "Finding cubes and cube roots of numbers, and applying them in practical contexts.",
+    },
+    {
+      title: "Reciprocals",
+      description:
+        "Understanding reciprocals of numbers and using them in computations.",
+    },
+    {
+      title: "Ratio, Proportion & Percentage",
+      description:
+        "Working with ratios, direct and inverse proportion, and percentage change.",
+    },
+    {
+      title: "Algebraic Expressions",
+      description:
+        "Simplifying, expanding, and factorising expressions with two or more variables.",
+    },
+    {
+      title: "Linear Equations & Inequalities",
+      description:
+        "Solving and graphing linear equations and inequalities in one variable.",
+    },
+    {
+      title: "Sequences and Patterns",
+      description:
+        "Identifying number patterns and finding terms in arithmetic sequences.",
+    },
+    {
+      title: "Length, Area & Volume",
+      description:
+        "Calculating perimeter, area, and volume of composite 2D and 3D shapes.",
+    },
+    {
+      title: "Angles & Geometric Constructions",
+      description:
+        "Measuring, constructing, and applying angle properties in geometric figures.",
+    },
+    {
+      title: "Data Handling & Probability",
+      description:
+        "Organising data, computing averages, and understanding basic probability.",
+    },
   ],
   notes: [
-    { title: "Numbers Strand Notes", description: "Concise notes covering cubes, cube roots, reciprocals, and number properties.", meta: "In preparation" },
-    { title: "Algebra Strand Notes", description: "Step-by-step breakdowns of algebraic expressions, equations, and inequalities.", meta: "In preparation" },
-    { title: "Geometry Strand Notes", description: "Illustrated notes on angles, constructions, and measurement.", meta: "In preparation" },
-    { title: "Data Handling Notes", description: "Guided notes on data organisation, averages, and probability basics.", meta: "In preparation" },
+    {
+      title: "Numbers Strand Notes",
+      description:
+        "Concise notes covering cubes, cube roots, reciprocals, and number properties.",
+      meta: "In preparation",
+    },
+    {
+      title: "Algebra Strand Notes",
+      description:
+        "Step-by-step breakdowns of algebraic expressions, equations, and inequalities.",
+      meta: "In preparation",
+    },
+    {
+      title: "Geometry Strand Notes",
+      description:
+        "Illustrated notes on angles, constructions, and measurement.",
+      meta: "In preparation",
+    },
+    {
+      title: "Data Handling Notes",
+      description:
+        "Guided notes on data organisation, averages, and probability basics.",
+      meta: "In preparation",
+    },
   ],
   practiceSets: [
-    { title: "Numbers Practice Set", description: "Exercises on cubes, cube roots, and reciprocals with worked solutions.", meta: "Coming soon" },
-    { title: "Algebra Practice Set", description: "Graded questions on expressions, equations, and inequalities.", meta: "Coming soon" },
-    { title: "Geometry Practice Set", description: "Construction and angle-property problems for hands-on practice.", meta: "Coming soon" },
-    { title: "Data & Probability Set", description: "Applied questions on data interpretation and probability.", meta: "Coming soon" },
+    {
+      title: "Numbers Practice Set",
+      description:
+        "Exercises on cubes, cube roots, and reciprocals with worked solutions.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Algebra Practice Set",
+      description:
+        "Graded questions on expressions, equations, and inequalities.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Geometry Practice Set",
+      description:
+        "Construction and angle-property problems for hands-on practice.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Data & Probability Set",
+      description: "Applied questions on data interpretation and probability.",
+      meta: "Coming soon",
+    },
   ],
   quizzes: [
-    { title: "Numbers Quick Quiz", description: "A short auto-marked quiz to test cubes, cube roots, and reciprocals.", meta: "10 questions · Coming soon" },
-    { title: "Algebra Quick Quiz", description: "Check your understanding of expressions and equations.", meta: "10 questions · Coming soon" },
-    { title: "End-of-Topic Assessment", description: "A comprehensive quiz covering all Grade 8 Mathematics strands.", meta: "20 questions · Coming soon" },
+    {
+      title: "Numbers Quick Quiz",
+      description:
+        "A short auto-marked quiz to test cubes, cube roots, and reciprocals.",
+      meta: "10 questions · Coming soon",
+    },
+    {
+      title: "Algebra Quick Quiz",
+      description: "Check your understanding of expressions and equations.",
+      meta: "10 questions · Coming soon",
+    },
+    {
+      title: "End-of-Topic Assessment",
+      description:
+        "A comprehensive quiz covering all Grade 8 Mathematics strands.",
+      meta: "20 questions · Coming soon",
+    },
   ],
   downloads: [
-    { title: "Grade 8 Mathematics Syllabus", description: "Official KICD-aligned topic breakdown for the term.", meta: "PDF · Coming soon" },
-    { title: "Formula & Reference Sheet", description: "Quick-reference sheet of key formulas for revision.", meta: "PDF · Coming soon" },
-    { title: "Printable Worksheet Pack", description: "A set of printable exercises for offline practice.", meta: "PDF · Coming soon" },
+    {
+      title: "Grade 8 Mathematics Syllabus",
+      description: "Official KICD-aligned topic breakdown for the term.",
+      meta: "PDF · Coming soon",
+    },
+    {
+      title: "Formula & Reference Sheet",
+      description: "Quick-reference sheet of key formulas for revision.",
+      meta: "PDF · Coming soon",
+    },
+    {
+      title: "Printable Worksheet Pack",
+      description: "A set of printable exercises for offline practice.",
+      meta: "PDF · Coming soon",
+    },
   ],
   videos: [
-    { title: "Introduction to Cubes & Cube Roots", description: "A visual walkthrough of finding cubes and cube roots.", meta: "Coming soon" },
-    { title: "Mastering Algebraic Expressions", description: "Step-by-step video on simplifying and factorising expressions.", meta: "Coming soon" },
-    { title: "Geometric Constructions Made Easy", description: "Learn to construct angles and shapes using a ruler and compass.", meta: "Coming soon" },
+    {
+      title: "Introduction to Cubes & Cube Roots",
+      description: "A visual walkthrough of finding cubes and cube roots.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Mastering Algebraic Expressions",
+      description:
+        "Step-by-step video on simplifying and factorising expressions.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Geometric Constructions Made Easy",
+      description:
+        "Learn to construct angles and shapes using a ruler and compass.",
+      meta: "Coming soon",
+    },
   ],
   faqs: [
     {
@@ -80,6 +202,174 @@ export const mathematicsContent: SubjectContent = {
       question: "When will notes and practice questions be available?",
       answer:
         "We're actively building out notes, practice questions, quizzes, and video lessons for this subject. Check back soon — new content is being added regularly.",
+    },
+  ],
+};
+
+export const englishContent: SubjectContent = {
+  slug: "english",
+  name: "English",
+  tagline: "Grade 8 · Junior Secondary",
+  colorKey: "green",
+  icon: MathIcon,
+
+  description:
+    "Grade 8 English develops learners' communication, reading, writing, grammar, and critical thinking skills. Learners engage with a variety of texts, improve spoken and written communication, appreciate literature, and apply English confidently in academic and everyday situations in line with the CBC curriculum.",
+
+  outcomes: [
+    "Communicate effectively through listening and speaking in different situations",
+    "Read and comprehend a wide range of literary and non-literary texts",
+    "Use correct grammar, vocabulary, and language structures in communication",
+    "Write clear, creative, and well-organised texts for different audiences and purposes",
+    "Develop critical thinking and analytical skills through literature",
+    "Use digital literacy skills to enhance language learning and communication",
+  ],
+  topics: [
+    {
+      title: "Listening & Speaking",
+      description:
+        "Developing effective listening, oral presentation, pronunciation, and discussion skills.",
+    },
+    {
+      title: "Reading Comprehension",
+      description:
+        "Reading literary and informational texts for understanding and interpretation.",
+    },
+    {
+      title: "Grammar in Use",
+      description:
+        "Using parts of speech, sentence structures, punctuation, and vocabulary correctly.",
+    },
+    {
+      title: "Creative Writing",
+      description:
+        "Writing narratives, descriptive compositions, and imaginative texts.",
+    },
+    {
+      title: "Functional Writing",
+      description:
+        "Writing letters, reports, speeches, notices, and other practical documents.",
+    },
+    {
+      title: "Literature",
+      description:
+        "Studying poems, short stories, plays, and appreciating literary devices.",
+    },
+    {
+      title: "Vocabulary Development",
+      description:
+        "Building word choice, idioms, synonyms, antonyms, and contextual meaning.",
+    },
+    {
+      title: "Critical Reading",
+      description:
+        "Analysing ideas, identifying opinions, facts, bias, and author's purpose.",
+    },
+    {
+      title: "Digital Communication",
+      description:
+        "Using English appropriately in digital platforms and online communication.",
+    },
+  ],
+  notes: [
+    {
+      title: "Listening & Speaking Notes",
+      description:
+        "Revision notes covering oral communication and listening skills.",
+      meta: "In preparation",
+    },
+    {
+      title: "Grammar Notes",
+      description:
+        "Comprehensive explanations of grammar concepts with examples.",
+      meta: "In preparation",
+    },
+    {
+      title: "Writing Skills Notes",
+      description:
+        "Guided notes on creative, functional, and academic writing.",
+      meta: "In preparation",
+    },
+    {
+      title: "Literature Notes",
+      description:
+        "Study notes on poems, short stories, and literary appreciation.",
+      meta: "In preparation",
+    },
+  ],
+  practiceSets: [
+    {
+      title: "Grammar Practice",
+      description:
+        "Exercises on grammar, punctuation, and sentence construction.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Reading Practice",
+      description: "Comprehension passages with guided questions.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Writing Practice",
+      description: "Creative and functional writing exercises.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Literature Practice",
+      description: "Practice questions based on literary texts.",
+      meta: "Coming soon",
+    },
+  ],
+  quizzes: [
+    {
+      title: "Grammar Quiz",
+      description: "Test your grammar and language skills.",
+      meta: "10 questions · Coming soon",
+    },
+    {
+      title: "Reading Quiz",
+      description: "Check your reading comprehension skills.",
+      meta: "10 questions · Coming soon",
+    },
+    {
+      title: "End-of-Topic Assessment",
+      description: "Comprehensive English assessment covering all strands.",
+      meta: "20 questions · Coming soon",
+    },
+  ],
+  downloads: [
+    {
+      title: "Grade 8 English Syllabus",
+      description: "Official KICD-aligned Grade 8 English curriculum guide.",
+      meta: "PDF · Coming soon",
+    },
+    {
+      title: "Grammar Reference Sheet",
+      description: "Quick-reference grammar guide for revision.",
+      meta: "PDF · Coming soon",
+    },
+    {
+      title: "Printable Writing Worksheets",
+      description: "Printable exercises for classroom and home practice.",
+      meta: "PDF · Coming soon",
+    },
+  ],
+  videos: [
+    {
+      title: "Listening & Speaking Skills",
+      description: "Improve communication through practical demonstrations.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Mastering English Grammar",
+      description: "Step-by-step lessons covering essential grammar concepts.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Creative Writing Workshop",
+      description:
+        "Learn techniques for writing engaging compositions and stories.",
+      meta: "Coming soon",
     },
   ],
 };
