@@ -21,6 +21,7 @@ export const mathematicsContent: SubjectContent = {
   icon: MathIcon,
   description:
     "Grade 8 Mathematics builds on the numeracy and problem-solving skills from Grade 7, moving into deeper algebraic reasoning, geometry, and data analysis. This subject strengthens logical thinking and equips you with practical skills for measurement, computation, and real-world problem solving — all aligned to the CBC curriculum.",
+
   outcomes: [
     "Apply cubes, cube roots, and reciprocals to solve real-life numerical problems",
     "Simplify, factorise, and manipulate algebraic expressions with confidence",
@@ -206,13 +207,25 @@ export const mathematicsContent: SubjectContent = {
   ],
 };
 
+const EnglishIcon = (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+  </svg>
+);
 export const englishContent: SubjectContent = {
   slug: "english",
   name: "English",
   tagline: "Grade 8 · Junior Secondary",
   colorKey: "green",
-  icon: MathIcon,
-
+  icon: EnglishIcon,
   description:
     "Grade 8 English develops learners' communication, reading, writing, grammar, and critical thinking skills. Learners engage with a variety of texts, improve spoken and written communication, appreciate literature, and apply English confidently in academic and everyday situations in line with the CBC curriculum.",
 
@@ -370,6 +383,28 @@ export const englishContent: SubjectContent = {
       description:
         "Learn techniques for writing engaging compositions and stories.",
       meta: "Coming soon",
+    },
+  ],
+  faqs: [
+    {
+      question: "What skills are developed in Grade 8 English?",
+      answer:
+        "Grade 8 English develops learners' reading, writing, speaking, listening, grammar, vocabulary, and critical thinking skills through a variety of texts and communication activities.",
+    },
+    {
+      question: "How is Grade 8 English assessed under CBC?",
+      answer:
+        "Assessment is continuous and competency-based, focusing on communication, comprehension, writing, and practical language use throughout the term.",
+    },
+    {
+      question: "What kinds of texts are studied?",
+      answer:
+        "Learners study narratives, poems, plays, informational texts, functional writing, and digital texts to improve language and literacy skills.",
+    },
+    {
+      question: "Will notes and revision materials be available?",
+      answer:
+        "Yes. Comprehensive notes, practice questions, revision papers, and quizzes will be added as the website grows.",
     },
   ],
 };
