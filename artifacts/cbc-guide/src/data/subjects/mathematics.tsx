@@ -807,7 +807,7 @@ export const socialStudiesContent: SubjectContent = {
   slug: "social-studies",
   name: "Social Studies",
   tagline: "Grade 8 · Junior Secondary",
-  colorKey: "amber",
+  colorKey: "purple",
   icon: SocialStudiesIcon,
 
   description:
