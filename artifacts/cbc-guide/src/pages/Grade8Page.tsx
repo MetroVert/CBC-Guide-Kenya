@@ -117,7 +117,7 @@ const SUBJECTS = [
     description: "Visual arts, music, drama & physical education",
   },
   {
-    slug: "pre-technical",
+    slug: "pre-technical-studies",
     name: "Pre-Technical Studies",
     icon: (
       <svg
@@ -135,7 +135,7 @@ const SUBJECTS = [
     description: "Woodwork, metalwork, electricity & drawing",
   },
   {
-    slug: "agriculture-nutrition",
+    slug: "agriculture-and-nutrition",
     name: "Agriculture & Nutrition",
     icon: (
       <svg
@@ -157,7 +157,7 @@ const SUBJECTS = [
     description: "Farming, food science, nutrition & health",
   },
   {
-    slug: "life-skills",
+    slug: "life-skills-and-values",
     name: "Life Skills & Values",
     icon: (
       <svg
@@ -211,8 +211,8 @@ const SUBJECTS = [
     description: "Entrepreneurship, commerce, accounting & financial literacy",
   },
   {
-    slug: "health-studies",
-    name: "Health Studies",
+    slug: "health-education",
+    name: "Health Education",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -229,7 +229,7 @@ const SUBJECTS = [
         <path d="M15.5 4.8a6 6 0 0 0-7 0" />
       </svg>
     ),
-    color: "red",
+    color: "green",
     description: "Healthy living, hygiene, nutrition & physical wellbeing",
   },
 ];
@@ -336,12 +336,12 @@ export default function Grade8Page() {
           <h1 className="grade-page-title">Grade 8 Subjects &amp; Resources</h1>
           <p className="grade-page-intro">
             Welcome to your Grade 8 hub! This is where Junior Secondary gets
-            serious — and exciting. You are building on everything you learned in
-            primary, diving deeper into science, language, and technology. Pick
-            a subject below to access organised notes, practice questions, and
-            learning activities crafted to match the required CBC curriculum. Every
-            resource here is mapped to your learning outcomes, so you study
-            smarter, not harder.
+            serious — and exciting. You are building on everything you learned
+            in primary, diving deeper into science, language, and technology.
+            Pick a subject below to access organised notes, practice questions,
+            and learning activities crafted to match the required CBC
+            curriculum. Every resource here is mapped to your learning outcomes,
+            so you study smarter, not harder.
           </p>
 
           {/* Search bar */}
