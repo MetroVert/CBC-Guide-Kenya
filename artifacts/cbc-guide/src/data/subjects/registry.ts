@@ -12,6 +12,7 @@ import {
   religiousEducationContent,
   businessStudiesContent,
   healthEducationContent,
+  computerStudiesContent,
 } from "./mathematics";
 
 export const subjectRegistry: Record<string, SubjectContent> = {
@@ -27,4 +28,5 @@ export const subjectRegistry: Record<string, SubjectContent> = {
   "religious-education": religiousEducationContent,
   "business-studies": businessStudiesContent,
   "health-education": healthEducationContent,
+  "computer-studies": computerStudiesContent,
 };

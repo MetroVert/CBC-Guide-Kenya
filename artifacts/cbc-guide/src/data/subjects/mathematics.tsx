@@ -1182,7 +1182,6 @@ const PreTechnicalIcon = (
     <path d="M17 7l-5 5" />
   </svg>
 );
-
 export const preTechnicalStudiesContent: SubjectContent = {
   slug: "pre-technical-studies",
   name: "Pre-Technical Studies",
@@ -1381,7 +1380,6 @@ const AgricultureNutritionIcon = (
     <path d="M8 12h8" />
   </svg>
 );
-
 export const agricultureNutritionContent: SubjectContent = {
   slug: "agriculture-and-nutrition",
   name: "Agriculture & Nutrition",
@@ -1577,7 +1575,6 @@ const LifeSkillsIcon = (
     <path d="M5.5 21a6.5 6.5 0 0113 0" />
   </svg>
 );
-
 export const lifeSkillsValuesContent: SubjectContent = {
   slug: "life-skills-and-values",
   name: "Life Skills & Values",
@@ -1775,7 +1772,6 @@ const ReligiousEducationIcon = (
     <path d="M8 21h8" />
   </svg>
 );
-
 export const religiousEducationContent: SubjectContent = {
   slug: "religious-education",
   name: "Religious Education",
@@ -1970,7 +1966,6 @@ const BusinessStudiesIcon = (
     <path d="M9 5h6v4H9z" />
   </svg>
 );
-
 export const businessStudiesContent: SubjectContent = {
   slug: "business-studies",
   name: "Business Studies",
@@ -2160,7 +2155,6 @@ const HealthEducationIcon = (
     <path d="M12 21s-7-4.5-7-10a4 4 0 017-2.7A4 4 0 0119 11c0 5.5-7 10-7 10z" />
   </svg>
 );
-
 export const healthEducationContent: SubjectContent = {
   slug: "health-education",
   name: "Health Education",
@@ -2333,6 +2327,197 @@ export const healthEducationContent: SubjectContent = {
       question: "Will MetroVert provide revision resources?",
       answer:
         "Yes. Notes, worksheets, quizzes and downloadable learning resources will continue to be added.",
+    },
+  ],
+};
+
+const ComputerStudiesIcon = (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect x="3" y="4" width="18" height="12" rx="2" />
+    <path d="M8 20h8" />
+    <path d="M12 16v4" />
+  </svg>
+);
+
+export const computerStudiesContent: SubjectContent = {
+  slug: "computer-studies",
+  name: "Computer Studies",
+  tagline: "Grade 8 · Junior Secondary",
+  colorKey: "blue",
+  icon: ComputerStudiesIcon,
+
+  description:
+    "Grade 8 Computer Studies introduces learners to digital literacy, computer systems, productivity software, internet safety, coding concepts, and responsible use of technology. The subject develops practical ICT skills aligned with the Competency-Based Curriculum.",
+  outcomes: [
+    "Identify the main components of a computer system.",
+    "Demonstrate safe and responsible use of ICT.",
+    "Use productivity software to create digital documents.",
+    "Apply basic problem-solving using computational thinking.",
+    "Access and evaluate information using the Internet responsibly.",
+    "Develop foundational digital skills for learning and innovation.",
+  ],
+  topics: [
+    {
+      title: "Introduction to Computers",
+      description: "Understanding computer systems, hardware and software.",
+    },
+    {
+      title: "Computer Hardware",
+      description: "Input, output, processing and storage devices.",
+    },
+    {
+      title: "Operating Systems",
+      description: "Managing files, folders and basic computer operations.",
+    },
+    {
+      title: "Word Processing",
+      description: "Creating, editing and formatting documents.",
+    },
+    {
+      title: "Spreadsheets",
+      description: "Working with rows, columns, formulas and charts.",
+    },
+    {
+      title: "Presentations",
+      description: "Designing simple presentation slides.",
+    },
+    {
+      title: "Internet & Email",
+      description: "Searching for information and communicating safely online.",
+    },
+    {
+      title: "Cyber Safety",
+      description:
+        "Protecting personal information and practising responsible online behaviour.",
+    },
+    {
+      title: "Introduction to Coding",
+      description:
+        "Understanding algorithms, logical thinking and simple programming concepts.",
+    },
+  ],
+  notes: [
+    {
+      title: "Computer Basics Notes",
+      description: "Hardware, software and operating systems.",
+      meta: "In preparation",
+    },
+    {
+      title: "Microsoft Office Notes",
+      description: "Word processing, spreadsheets and presentations.",
+      meta: "In preparation",
+    },
+    {
+      title: "Internet Safety Notes",
+      description: "Responsible and safe use of the Internet.",
+      meta: "In preparation",
+    },
+    {
+      title: "Coding Basics",
+      description: "Introduction to programming and algorithms.",
+      meta: "In preparation",
+    },
+  ],
+  practiceSets: [
+    {
+      title: "Computer Fundamentals",
+      description: "Practice questions on computer systems.",
+      meta: "Coming soon",
+    },
+    {
+      title: "ICT Skills",
+      description: "Activities on productivity software.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Internet Safety",
+      description: "Revision exercises on online safety.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Coding Challenges",
+      description: "Simple logical thinking activities.",
+      meta: "Coming soon",
+    },
+  ],
+  quizzes: [
+    {
+      title: "Computer Basics Quiz",
+      description: "Assess your understanding of computer systems.",
+      meta: "10 Questions",
+    },
+    {
+      title: "ICT Skills Quiz",
+      description: "Revision on productivity software and digital literacy.",
+      meta: "10 Questions",
+    },
+    {
+      title: "End of Strand Assessment",
+      description: "Comprehensive Computer Studies assessment.",
+      meta: "20 Questions",
+    },
+  ],
+  downloads: [
+    {
+      title: "Computer Studies Notes",
+      description: "Printable Grade 8 revision notes.",
+      meta: "PDF · Coming soon",
+    },
+    {
+      title: "ICT Workbook",
+      description: "Computer practical activities.",
+      meta: "PDF · Coming soon",
+    },
+    {
+      title: "Revision Worksheets",
+      description: "Practice exercises.",
+      meta: "PDF · Coming soon",
+    },
+  ],
+  videos: [
+    {
+      title: "Introduction to Computers",
+      description: "Overview of Grade 8 Computer Studies.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Internet Safety",
+      description: "Safe and responsible online behaviour.",
+      meta: "Coming soon",
+    },
+    {
+      title: "Coding Fundamentals",
+      description: "Learning computational thinking.",
+      meta: "Coming soon",
+    },
+  ],
+  faqs: [
+    {
+      question: "Why is Computer Studies important?",
+      answer:
+        "It equips learners with practical digital skills needed for learning, communication, innovation and future careers.",
+    },
+    {
+      question: "Will learners use real computers?",
+      answer:
+        "Yes. Where facilities are available, learners carry out practical ICT activities.",
+    },
+    {
+      question: "Does Computer Studies include programming?",
+      answer:
+        "Learners are introduced to basic coding concepts, algorithms and computational thinking.",
+    },
+    {
+      question: "Will MetroVert provide practical tutorials?",
+      answer:
+        "Yes. Computer notes, practical guides, quizzes and downloadable resources will be added over time.",
     },
   ],
 };
