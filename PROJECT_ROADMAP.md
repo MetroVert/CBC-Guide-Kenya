@@ -14,16 +14,16 @@ Create Kenya's most trusted and easy-to-use CBC learning platform for students, 
 - [x] Grade 8 Page
 - [x] Subject Cards
 - [x] Mathematics Page
-- [ ] Placeholder Content
+- [x] Placeholder Content
 
 ---
 
 # Version 0.2
 
-- [ ] Quiz System
-- [ ] Downloads Section
-- [ ] Search
-- [ ] Subject Pages
+- [x] Quiz System
+- [x] Downloads Section
+- [x] Search
+- [x] Subject Pages
 
 ---
 
