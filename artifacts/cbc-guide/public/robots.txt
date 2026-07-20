@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+
+Sitemap: https://cbc-guide-kenya.vercel.app/sitemap.xml
