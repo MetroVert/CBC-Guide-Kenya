@@ -1,4 +1,5 @@
 import type { SubjectContent } from "../../types/subject";
+import { mathematicsLearningModule } from "./mathematicsLearningModule";
 
 const MathIcon = (
   <svg
@@ -78,10 +79,10 @@ export const mathematicsContent: SubjectContent = {
   ],
   notes: [
     {
-      title: "Numbers Strand Notes",
+      title: "Cubes and Cube Roots — Study Notes",
       description:
-        "Concise notes covering cubes, cube roots, reciprocals, and number properties.",
-      meta: "In preparation",
+        "A complete lesson with worked examples and a source reference.",
+      meta: "Available now",
     },
     {
       title: "Algebra Strand Notes",
@@ -104,10 +105,10 @@ export const mathematicsContent: SubjectContent = {
   ],
   practiceSets: [
     {
-      title: "Numbers Practice Set",
+      title: "Cubes and Cube Roots Worksheet",
       description:
-        "Exercises on cubes, cube roots, and reciprocals with worked solutions.",
-      meta: "Coming soon",
+        "Ten practice problems with a printable worksheet and answer key.",
+      meta: "Available now",
     },
     {
       title: "Algebra Practice Set",
@@ -132,18 +133,18 @@ export const mathematicsContent: SubjectContent = {
       title: "Numbers Quick Quiz",
       description:
         "A short auto-marked quiz to test cubes, cube roots, and reciprocals.",
-      meta: "10 questions · Coming soon",
+      meta: "8 questions · Interactive",
     },
     {
       title: "Algebra Quick Quiz",
       description: "Check your understanding of expressions and equations.",
-      meta: "10 questions · Coming soon",
+      meta: "8 questions · Interactive",
     },
     {
       title: "End-of-Topic Assessment",
       description:
         "A comprehensive quiz covering all Grade 8 Mathematics strands.",
-      meta: "20 questions · Coming soon",
+      meta: "12 questions · Interactive",
     },
   ],
   downloads: [
@@ -182,6 +183,7 @@ export const mathematicsContent: SubjectContent = {
       meta: "Coming soon",
     },
   ],
+  learningModule: mathematicsLearningModule,
   faqs: [
     {
       question: "What topics are covered in Grade 8 Mathematics under CBC?",
@@ -201,7 +203,7 @@ export const mathematicsContent: SubjectContent = {
     {
       question: "When will notes and practice questions be available?",
       answer:
-        "We're actively building out notes, practice questions, quizzes, and video lessons for this subject. Check back soon — new content is being added regularly.",
+        "The Cubes and Cube Roots lesson, worksheet, and Mathematics quizzes are available on this page. More notes and resources will be added progressively.",
     },
   ],
 };

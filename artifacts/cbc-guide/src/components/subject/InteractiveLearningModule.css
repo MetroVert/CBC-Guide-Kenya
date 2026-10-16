@@ -1,0 +1,886 @@
+.cbc-learning-module {
+  --clm-ink: hsl(220, 25%, 15%);
+  --clm-muted: hsl(220, 15%, 48%);
+  --clm-border: hsl(210, 20%, 88%);
+  --clm-paper: hsl(0, 0%, 100%);
+  --clm-wash: hsl(210, 18%, 98%);
+  --clm-green: hsl(152, 64%, 35%);
+  --clm-green-dark: hsl(152, 64%, 28%);
+  --clm-green-soft: hsl(152, 64%, 35%, 0.08);
+  --clm-blue: hsl(210, 85%, 40%);
+  color: var(--clm-ink);
+  background: var(--clm-paper);
+  font-family: var(--app-font-sans, system-ui, sans-serif);
+  padding: 3rem 1.5rem 5rem;
+}
+
+.cbc-learning-module *,
+.cbc-learning-module *::before,
+.cbc-learning-module *::after {
+  box-sizing: border-box;
+}
+
+.cbc-learning-module .clm-shell {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+}
+
+.cbc-learning-module .clm-lesson-header {
+  max-width: 800px;
+  margin: 0 auto 2.25rem;
+  text-align: center;
+}
+
+.cbc-learning-module .clm-eyebrow,
+.cbc-learning-module .clm-section-kicker {
+  margin: 0 0 0.55rem;
+  color: var(--clm-green-dark);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.075em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.cbc-learning-module .clm-title {
+  margin: 0;
+  color: var(--clm-ink);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.cbc-learning-module .clm-introduction {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  color: var(--clm-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.cbc-learning-module .clm-goals {
+  padding: 1.55rem 1.75rem 1.7rem;
+  border: 1px solid hsl(152, 64%, 35%, 0.2);
+  border-radius: 15px;
+  background:
+    linear-gradient(120deg, hsl(152, 64%, 35%, 0.065), transparent 70%),
+    var(--clm-wash);
+}
+
+.cbc-learning-module .clm-goals h2,
+.cbc-learning-module .clm-section-heading h2 {
+  margin: 0;
+  color: var(--clm-ink);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.cbc-learning-module .clm-goal-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem 1.5rem;
+  margin: 1.3rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cbc-learning-module .clm-goal {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--clm-ink);
+  font-size: 0.91rem;
+  line-height: 1.55;
+}
+
+.cbc-learning-module .clm-goal-number {
+  display: inline-flex;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 1.8rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--clm-green-soft);
+  color: var(--clm-green-dark);
+  font-size: 0.69rem;
+  font-weight: 800;
+}
+
+.cbc-learning-module .clm-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px;
+  align-items: start;
+  gap: 3.25rem;
+  padding: 3.5rem 0 3.25rem;
+}
+
+.cbc-learning-module .clm-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0 0 1.7rem;
+}
+
+.cbc-learning-module .clm-heading-rule {
+  height: 1px;
+  flex: 1;
+  background: var(--clm-border);
+}
+
+.cbc-learning-module .clm-lesson-section {
+  padding: 0 0 1.8rem;
+  margin: 0 0 1.8rem;
+  border-bottom: 1px solid var(--clm-border);
+}
+
+.cbc-learning-module .clm-lesson-section h3 {
+  margin: 0 0 0.75rem;
+  color: var(--clm-ink);
+  font-size: 1.14rem;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 1.4;
+}
+
+.cbc-learning-module .clm-lesson-section > p {
+  margin: 0.55rem 0 0;
+  color: hsl(220, 20%, 27%);
+  font-size: 0.96rem;
+  line-height: 1.75;
+}
+
+.cbc-learning-module .clm-example {
+  margin-top: 1.2rem;
+  padding: 1.2rem 1.35rem 1.25rem;
+  border: 1px solid hsl(210, 85%, 40%, 0.18);
+  border-left: 3px solid var(--clm-blue);
+  border-radius: 4px 12px 12px 4px;
+  background: hsl(210, 85%, 40%, 0.035);
+}
+
+.cbc-learning-module .clm-example-label {
+  margin-bottom: 0.55rem;
+  color: var(--clm-blue);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.cbc-learning-module .clm-example-prompt {
+  margin: 0;
+  color: var(--clm-ink);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.cbc-learning-module .clm-example-steps {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.95rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cbc-learning-module .clm-example-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: hsl(220, 20%, 27%);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.cbc-learning-module .clm-step-number {
+  display: inline-flex;
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: 0 0 1.35rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: hsl(210, 85%, 40%, 0.11);
+  color: var(--clm-blue);
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.cbc-learning-module .clm-example-answer {
+  margin: 0.8rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid hsl(210, 85%, 40%, 0.14);
+  color: var(--clm-green-dark);
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+.cbc-learning-module .clm-source {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-top: 2rem;
+  padding: 1.2rem 1.25rem;
+  border: 1px solid var(--clm-border);
+  border-radius: 12px;
+  background: var(--clm-wash);
+}
+
+.cbc-learning-module .clm-source-mark {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 2.25rem;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--clm-green-soft);
+  color: var(--clm-green-dark);
+}
+
+.cbc-learning-module .clm-source-mark svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.cbc-learning-module .clm-source-copy {
+  min-width: 0;
+}
+
+.cbc-learning-module .clm-source-label {
+  margin: 0 0 0.25rem;
+  color: var(--clm-muted);
+  font-size: 0.73rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.cbc-learning-module .clm-source-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  color: var(--clm-green-dark);
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1.45;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.cbc-learning-module .clm-source-link:hover {
+  color: hsl(152, 64%, 23%);
+}
+
+.cbc-learning-module .clm-external-mark {
+  font-size: 0.8em;
+}
+
+.cbc-learning-module .clm-source-note {
+  margin: 0.5rem 0 0;
+  color: var(--clm-muted);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.cbc-learning-module .clm-side-note {
+  position: sticky;
+  top: 1.5rem;
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 5.2rem;
+  padding: 0.85rem 0;
+}
+
+.cbc-learning-module .clm-side-note-line {
+  width: 3px;
+  flex: 0 0 3px;
+  border-radius: 4px;
+  background: var(--clm-green);
+}
+
+.cbc-learning-module .clm-side-note p {
+  margin: 0;
+  color: var(--clm-muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.cbc-learning-module .clm-worksheet {
+  padding: 2rem;
+  border: 1px solid var(--clm-border);
+  border-radius: 16px;
+  background: var(--clm-wash);
+}
+
+.cbc-learning-module .clm-worksheet-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--clm-border);
+}
+
+.cbc-learning-module .clm-worksheet-top h2 {
+  margin: 0;
+  color: var(--clm-ink);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+.cbc-learning-module .clm-worksheet-instructions {
+  max-width: 680px;
+  margin: 0.6rem 0 0;
+  color: var(--clm-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.cbc-learning-module .clm-print-button,
+.cbc-learning-module .clm-button,
+.cbc-learning-module .clm-answer-key-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.65rem;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.2;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+.cbc-learning-module .clm-print-button {
+  flex: 0 0 auto;
+  padding: 0.55rem 0.85rem;
+  border-color: hsl(152, 64%, 35%, 0.28);
+  background: var(--clm-paper);
+  color: var(--clm-green-dark);
+}
+
+.cbc-learning-module .clm-print-button svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.cbc-learning-module .clm-print-button:hover {
+  border-color: var(--clm-green);
+  background: var(--clm-green-soft);
+}
+
+.cbc-learning-module .clm-question-list {
+  display: grid;
+  gap: 1.4rem;
+  margin: 0;
+  padding: 1.4rem 0 0;
+  list-style: none;
+  counter-reset: worksheet;
+}
+
+.cbc-learning-module .clm-worksheet-question {
+  counter-increment: worksheet;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px dashed hsl(210, 20%, 82%);
+}
+
+.cbc-learning-module .clm-question-prompt {
+  margin: 0;
+  color: var(--clm-ink);
+  font-size: 0.96rem;
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+.cbc-learning-module .clm-answer-space {
+  min-height: 4.2rem;
+  margin-top: 0.55rem;
+  border-bottom: 1px solid hsl(220, 15%, 78%);
+}
+
+.cbc-learning-module .clm-answer-key {
+  margin-top: 1.4rem;
+  border-top: 1px solid var(--clm-border);
+}
+
+.cbc-learning-module .clm-answer-key-toggle {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--clm-green-dark);
+  text-align: left;
+}
+
+.cbc-learning-module .clm-answer-key-toggle:hover {
+  color: hsl(152, 64%, 23%);
+}
+
+.cbc-learning-module .clm-chevron {
+  width: 1.1rem;
+  height: 1.1rem;
+  transition: transform 160ms ease;
+}
+
+.cbc-learning-module .clm-chevron-open {
+  transform: rotate(180deg);
+}
+
+.cbc-learning-module .clm-answer-key-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0 0 0.5rem 1.2rem;
+  color: var(--clm-ink);
+}
+
+.cbc-learning-module .clm-answer-key-list li {
+  padding-left: 0.25rem;
+}
+
+.cbc-learning-module .clm-key-answer {
+  margin: 0;
+  color: var(--clm-green-dark);
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.cbc-learning-module .clm-key-explanation {
+  margin: 0.2rem 0 0;
+  color: var(--clm-muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.cbc-learning-module .clm-quizzes {
+  padding-top: 3.6rem;
+}
+
+.cbc-learning-module .clm-quiz-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.cbc-learning-module .clm-quiz {
+  padding: 1.5rem;
+  border: 1px solid var(--clm-border);
+  border-radius: 14px;
+  background: var(--clm-paper);
+  box-shadow: 0 4px 16px hsl(220, 25%, 15%, 0.035);
+}
+
+.cbc-learning-module .clm-quiz-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 1.35rem;
+}
+
+.cbc-learning-module .clm-quiz-index {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: 0 0 2.35rem;
+  place-items: center;
+  border: 1px solid hsl(152, 64%, 35%, 0.2);
+  border-radius: 10px;
+  background: var(--clm-green-soft);
+  color: var(--clm-green-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.cbc-learning-module .clm-quiz-header h3 {
+  margin: 0;
+  color: var(--clm-ink);
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+.cbc-learning-module .clm-quiz-header p {
+  margin: 0.2rem 0 0;
+  color: var(--clm-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.cbc-learning-module .clm-quiz-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  color: var(--clm-muted);
+  font-size: 0.77rem;
+  font-weight: 650;
+}
+
+.cbc-learning-module .clm-progress-track {
+  height: 5px;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 99px;
+  background: hsl(210, 20%, 93%);
+}
+
+.cbc-learning-module .clm-progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--clm-green);
+  transition: width 180ms ease;
+}
+
+.cbc-learning-module .clm-quiz-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.cbc-learning-module .clm-quiz-fieldset legend {
+  width: 100%;
+  margin-bottom: 0.95rem;
+  color: var(--clm-ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.cbc-learning-module .clm-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.cbc-learning-module .clm-option {
+  position: relative;
+  display: flex;
+  min-height: 3.1rem;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--clm-border);
+  border-radius: 9px;
+  background: var(--clm-paper);
+  color: hsl(220, 20%, 27%);
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  transition:
+    border-color 140ms ease,
+    background-color 140ms ease;
+}
+
+.cbc-learning-module .clm-option:hover {
+  border-color: hsl(152, 64%, 35%, 0.5);
+  background: hsl(152, 64%, 35%, 0.025);
+}
+
+.cbc-learning-module .clm-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.cbc-learning-module .clm-option:has(input:focus-visible) {
+  outline: 3px solid hsl(210, 85%, 40%, 0.35);
+  outline-offset: 2px;
+}
+
+.cbc-learning-module .clm-option:has(input:checked) {
+  border-color: var(--clm-green);
+  background: var(--clm-green-soft);
+}
+
+.cbc-learning-module .clm-quiz-fieldset:disabled .clm-option {
+  cursor: default;
+}
+
+.cbc-learning-module .clm-quiz-fieldset:disabled .clm-option:hover {
+  border-color: var(--clm-border);
+  background: var(--clm-paper);
+}
+
+.cbc-learning-module
+  .clm-quiz-fieldset:disabled
+  .clm-option:has(input:checked) {
+  border-color: var(--clm-green);
+  background: var(--clm-green-soft);
+}
+
+.cbc-learning-module .clm-option-marker {
+  display: inline-grid;
+  width: 1.4rem;
+  height: 1.4rem;
+  flex: 0 0 1.4rem;
+  place-items: center;
+  border: 1px solid hsl(220, 15%, 78%);
+  border-radius: 50%;
+  background: var(--clm-paper);
+  color: var(--clm-muted);
+  font-size: 0.67rem;
+  font-weight: 750;
+}
+
+.cbc-learning-module .clm-option:has(input:checked) .clm-option-marker {
+  border-color: var(--clm-green);
+  color: var(--clm-green-dark);
+}
+
+.cbc-learning-module .clm-option-correct {
+  border-color: hsl(152, 64%, 35%, 0.52) !important;
+  background: hsl(152, 64%, 35%, 0.08) !important;
+}
+
+.cbc-learning-module .clm-option-incorrect {
+  border-color: hsl(8, 62%, 50%, 0.45) !important;
+  background: hsl(8, 62%, 50%, 0.055) !important;
+}
+
+.cbc-learning-module .clm-correct-label {
+  margin-left: auto;
+  color: var(--clm-green-dark);
+  font-size: 0.7rem;
+  font-weight: 750;
+}
+
+.cbc-learning-module .clm-feedback {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 9px;
+}
+
+.cbc-learning-module .clm-feedback strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.84rem;
+}
+
+.cbc-learning-module .clm-feedback p {
+  margin: 0;
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+
+.cbc-learning-module .clm-feedback-correct {
+  border: 1px solid hsl(152, 64%, 35%, 0.2);
+  background: hsl(152, 64%, 35%, 0.07);
+  color: var(--clm-green-dark);
+}
+
+.cbc-learning-module .clm-feedback-incorrect {
+  border: 1px solid hsl(25, 85%, 50%, 0.22);
+  background: hsl(25, 85%, 50%, 0.07);
+  color: hsl(25, 70%, 30%);
+}
+
+.cbc-learning-module .clm-quiz-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.cbc-learning-module .clm-button {
+  padding: 0.65rem 1.05rem;
+}
+
+.cbc-learning-module .clm-button-primary {
+  background: var(--clm-green);
+  color: white;
+}
+
+.cbc-learning-module .clm-button-primary:hover:not(:disabled) {
+  background: var(--clm-green-dark);
+}
+
+.cbc-learning-module .clm-button-primary:disabled {
+  background: hsl(210, 15%, 83%);
+  color: hsl(220, 15%, 48%);
+  cursor: not-allowed;
+}
+
+.cbc-learning-module .clm-button-secondary {
+  border-color: hsl(152, 64%, 35%, 0.3);
+  background: var(--clm-paper);
+  color: var(--clm-green-dark);
+}
+
+.cbc-learning-module .clm-button-secondary:hover {
+  background: var(--clm-green-soft);
+}
+
+.cbc-learning-module .clm-quiz-result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  padding-top: 0.1rem;
+}
+
+.cbc-learning-module .clm-result-label {
+  width: 100%;
+  margin: 0;
+  color: var(--clm-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.cbc-learning-module .clm-result-score {
+  margin: 0;
+  color: var(--clm-green-dark);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.cbc-learning-module .clm-quiz-empty {
+  margin: 0;
+  color: var(--clm-muted);
+  font-size: 0.9rem;
+}
+
+.cbc-learning-module :where(button, a, input):focus-visible {
+  outline: 3px solid hsl(210, 85%, 40%, 0.45);
+  outline-offset: 3px;
+}
+
+.cbc-learning-module button:disabled {
+  cursor: not-allowed;
+}
+
+@media (max-width: 760px) {
+  .cbc-learning-module {
+    padding: 2.25rem 1rem 3.5rem;
+  }
+
+  .cbc-learning-module .clm-goal-list {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .cbc-learning-module .clm-content-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 2.7rem 0;
+  }
+
+  .cbc-learning-module .clm-side-note {
+    position: static;
+    margin-top: -0.4rem;
+  }
+
+  .cbc-learning-module .clm-worksheet {
+    padding: 1.25rem;
+  }
+
+  .cbc-learning-module .clm-worksheet-top {
+    flex-direction: column;
+  }
+
+  .cbc-learning-module .clm-print-button {
+    align-self: flex-start;
+  }
+
+  .cbc-learning-module .clm-quiz {
+    padding: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cbc-learning-module .clm-goals {
+    padding: 1.2rem;
+  }
+
+  .cbc-learning-module .clm-options {
+    grid-template-columns: 1fr;
+  }
+
+  .cbc-learning-module .clm-source {
+    padding: 1rem;
+  }
+
+  .cbc-learning-module .clm-correct-label {
+    font-size: 0.64rem;
+  }
+}
+
+@media print {
+  body:has(.cbc-learning-module) * {
+    visibility: hidden !important;
+  }
+
+  .cbc-learning-module,
+  .cbc-learning-module .clm-worksheet,
+  .cbc-learning-module .clm-worksheet * {
+    visibility: visible !important;
+  }
+
+  .cbc-learning-module {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    padding: 0;
+    background: white !important;
+    color: black !important;
+  }
+
+  .cbc-learning-module .clm-shell {
+    width: 100%;
+    max-width: none;
+  }
+
+  .cbc-learning-module .clm-worksheet {
+    display: block !important;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: white !important;
+    color: black !important;
+    box-shadow: none;
+  }
+
+  .cbc-learning-module .clm-worksheet-top {
+    display: block;
+    border-bottom: 1px solid #888;
+  }
+
+  .cbc-learning-module .clm-print-button,
+  .cbc-learning-module .clm-answer-key {
+    display: none !important;
+  }
+
+  .cbc-learning-module .clm-question-list {
+    gap: 1.1rem;
+  }
+
+  .cbc-learning-module .clm-worksheet-question {
+    break-inside: avoid;
+    border-color: #aaa;
+  }
+
+  .cbc-learning-module .clm-answer-space {
+    min-height: 3.2rem;
+    border-color: #888;
+  }
+}
