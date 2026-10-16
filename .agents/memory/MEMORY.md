@@ -1,0 +1,1 @@
+- [KICD Grade 8 source access](kicd-grade8-source-access.md) — cite the official design listing, but do not claim exact wording was checked unless the PDF is readable.
