@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import type { ReactNode } from "react";
 import type { SubjectContent, SubjectResourceItem } from "../../types/subject";
 import { SUBJECT_COLOR_MAP } from "../../lib/subjectTheme";
+import InteractiveLearningModule from "./InteractiveLearningModule";
 
 const CheckIcon = () => (
   <svg
@@ -306,27 +307,33 @@ export default function SubjectPageLayout({
         </div>
       </section>
 
-      <ResourceSection
-        id="notes"
-        title="Notes"
-        iconKey="notes"
-        items={content.notes}
-        colorKey={content.colorKey}
-      />
-      <ResourceSection
-        id="practice-questions"
-        title="Practice Questions"
-        iconKey="practice"
-        items={content.practiceSets}
-        colorKey={content.colorKey}
-      />
-      <ResourceSection
-        id="quizzes"
-        title="Quizzes"
-        iconKey="quizzes"
-        items={content.quizzes}
-        colorKey={content.colorKey}
-      />
+      {content.learningModule ? (
+        <InteractiveLearningModule module={content.learningModule} />
+      ) : (
+        <>
+          <ResourceSection
+            id="notes"
+            title="Notes"
+            iconKey="notes"
+            items={content.notes}
+            colorKey={content.colorKey}
+          />
+          <ResourceSection
+            id="practice-questions"
+            title="Practice Questions"
+            iconKey="practice"
+            items={content.practiceSets}
+            colorKey={content.colorKey}
+          />
+          <ResourceSection
+            id="quizzes"
+            title="Quizzes"
+            iconKey="quizzes"
+            items={content.quizzes}
+            colorKey={content.colorKey}
+          />
+        </>
+      )}
       <ResourceSection
         id="downloads"
         title="Downloads"
