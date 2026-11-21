@@ -373,8 +373,9 @@ function SubjectLayout() {
   );
 }
 
-/* ─── Per-page browser/search titles ────────────────────── */
+/* ─── Per-page titles and canonical links ───────────────── */
 const SITE_NAME = "CBC Guide Kenya";
+const SITE_URL = "https://cbc-guide-kenya.vercel.app";
 
 function slugToTitle(slug: string) {
   return slug
@@ -385,8 +386,7 @@ function slugToTitle(slug: string) {
 
 function getPageTitle(path: string): string {
   const clean = path.replace(/\/+$/, "") || "/";
-  if (clean === "/")
-    return `${SITE_NAME} – Notes & Practice for the Kenyan CBC`;
+  if (clean === "/") return `${SITE_NAME} – Notes & Practice for the Kenyan CBC`;
   if (clean === "/grades/grade-8") {
     return `Grade 8 Subjects & Resources | ${SITE_NAME}`;
   }
@@ -399,10 +399,32 @@ function getPageTitle(path: string): string {
   return SITE_NAME;
 }
 
-function PageTitle() {
+// Returns the official path for real pages, or null for unknown addresses.
+function getCanonicalPath(path: string): string | null {
+  const clean = path.replace(/\/+$/, "") || "/";
+  if (clean === "/" || clean === "/grades/grade-8") return clean;
+  const match = clean.match(/^\/grades\/grade-8\/([^/]+)$/);
+  if (match && subjectRegistry[match[1]]) return clean;
+  return null;
+}
+
+function PageMeta() {
   const [location] = useLocation();
   useEffect(() => {
     document.title = getPageTitle(location);
+
+    const canonicalPath = getCanonicalPath(location);
+    let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (canonicalPath === null) {
+      link?.remove();
+      return;
+    }
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "canonical";
+      document.head.appendChild(link);
+    }
+    link.href = SITE_URL + canonicalPath;
   }, [location]);
   return null;
 }
@@ -411,7 +433,7 @@ function PageTitle() {
 export default function App() {
   return (
     <Router>
-      <PageTitle />
+      <PageMeta />
       <Navbar />
       <Route path="/" component={HomePage} />
       <Route path="/grades/grade-8" component={Grade8Layout} />
