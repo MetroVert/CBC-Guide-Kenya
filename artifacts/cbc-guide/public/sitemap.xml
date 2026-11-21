@@ -1,12 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://cbc-guide-kenya.vercel.app/</loc>
-    <lastmod>2026-07-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-21</lastmod>
   </url>
-
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/mathematics</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/english</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/kiswahili</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/integrated-science</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/social-studies</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/creative-arts</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/pre-technical-studies</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/agriculture-and-nutrition</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/life-skills-and-values</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/religious-education</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/business-studies</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/health-education</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://cbc-guide-kenya.vercel.app/grades/grade-8/computer-studies</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
 </urlset>
