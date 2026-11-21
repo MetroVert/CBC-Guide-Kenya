@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Router, Route, Link, useLocation } from "wouter";
 import Grade8Page from "./pages/Grade8Page";
 import SubjectDetailPage from "./pages/SubjectDetailPage";
+import { subjectRegistry } from "./data/subjects/registry";
 import "./index.css";
 
 /* ─── Shared: Navbar ────────────────────────────────────── */
@@ -372,10 +373,45 @@ function SubjectLayout() {
   );
 }
 
+/* ─── Per-page browser/search titles ────────────────────── */
+const SITE_NAME = "CBC Guide Kenya";
+
+function slugToTitle(slug: string) {
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+function getPageTitle(path: string): string {
+  const clean = path.replace(/\/+$/, "") || "/";
+  if (clean === "/")
+    return `${SITE_NAME} – Notes & Practice for the Kenyan CBC`;
+  if (clean === "/grades/grade-8") {
+    return `Grade 8 Subjects & Resources | ${SITE_NAME}`;
+  }
+  const match = clean.match(/^\/grades\/grade-8\/([^/]+)$/);
+  if (match) {
+    const slug = match[1];
+    const name = subjectRegistry[slug]?.name ?? slugToTitle(slug);
+    return `Grade 8 ${name} Notes | ${SITE_NAME}`;
+  }
+  return SITE_NAME;
+}
+
+function PageTitle() {
+  const [location] = useLocation();
+  useEffect(() => {
+    document.title = getPageTitle(location);
+  }, [location]);
+  return null;
+}
+
 /* ─── Root app with router ──────────────────────────────── */
 export default function App() {
   return (
     <Router>
+      <PageTitle />
       <Navbar />
       <Route path="/" component={HomePage} />
       <Route path="/grades/grade-8" component={Grade8Layout} />
