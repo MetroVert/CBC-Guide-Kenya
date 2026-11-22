@@ -20,8 +20,13 @@ function getInitialQuizState(): QuizState {
 
 export default function InteractiveLearningModule({
   module,
+  variant = "full",
+  eyebrow = "Mathematics lesson",
 }: {
   module: InteractiveLearningModuleData;
+  /** "full" = lesson, worksheet and quizzes (topic page); "quizzes" = quizzes only (subject page) */
+  variant?: "full" | "quizzes";
+  eyebrow?: string;
 }) {
   const [answerKeyOpen, setAnswerKeyOpen] = useState(false);
   const [quizStates, setQuizStates] = useState<Record<string, QuizState>>({});
@@ -39,13 +44,18 @@ export default function InteractiveLearningModule({
   const printWorksheet = () => window.print();
 
   return (
-    <section className="cbc-learning-module" aria-labelledby="clm-title">
+    <section
+      className="cbc-learning-module"
+      aria-labelledby={variant === "full" ? "clm-title" : "clm-quizzes-title"}
+    >
       <div className="clm-shell">
+        {variant === "full" && (
+        <>
         <header className="clm-lesson-header">
-          <p className="clm-eyebrow">Mathematics lesson</p>
-          <h2 className="clm-title" id="clm-title">
+          <p className="clm-eyebrow">{eyebrow}</p>
+          <h1 className="clm-title" id="clm-title">
             {module.lessonTitle}
-          </h2>
+          </h1>
           <p className="clm-introduction">{module.introduction}</p>
         </header>
 
@@ -246,6 +256,9 @@ export default function InteractiveLearningModule({
             )}
           </div>
         </section>
+
+        </>
+        )}
 
         {module.quizzes.length > 0 && (
           <section

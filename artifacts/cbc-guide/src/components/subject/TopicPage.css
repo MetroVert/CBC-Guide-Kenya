@@ -1,0 +1,52 @@
+/* Topic cards on the subject page */
+.topic-card.topic-card--link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.topic-card.topic-card--link:hover {
+  border-color: hsl(152, 64%, 35%, 0.45);
+}
+
+.topic-card.topic-card--soon:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.topic-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.topic-badge--ready {
+  background: hsl(152, 64%, 35%, 0.1);
+  color: hsl(152, 64%, 28%);
+}
+
+.topic-badge--soon {
+  background: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+
+/* Previous / next navigation on topic pages */
+.topic-nav {
+  background: white;
+  border-top: 1px solid hsl(var(--border));
+  padding: 2rem 1.5rem 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.topic-nav .topic-nav-link {
+  margin-top: 0;
+}
