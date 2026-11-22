@@ -3,6 +3,8 @@ import { Router, Route, Switch, Link, useLocation, useParams } from "wouter";
 import Grade8Page from "./pages/Grade8Page";
 import SubjectDetailPage from "./pages/SubjectDetailPage";
 import NotFound from "./pages/not-found";
+import TopicPage from "./pages/TopicPage";
+import { getTopicPage } from "./data/subjects/topicPages";
 import { subjectRegistry } from "./data/subjects/registry";
 import "./index.css";
 
@@ -374,6 +376,30 @@ function NotFoundLayout() {
   );
 }
 
+function TopicLayout() {
+  const params = useParams<{ subject: string; topic: string }>();
+  const page = getTopicPage(params.subject ?? "", params.topic ?? "");
+  if (!page) return <NotFoundLayout />;
+
+  return (
+    <main className="inner-page">
+      <TopicPage page={page} />
+      <footer
+        style={{
+          textAlign: "center",
+          padding: "40px 20px",
+          color: "#6b7280",
+          fontSize: "14px",
+          borderTop: "1px solid #e5e7eb",
+          marginTop: "60px",
+        }}
+      >
+        Designed & Developed by <strong>MetroVert</strong>
+      </footer>
+    </main>
+  );
+}
+
 function SubjectLayout() {
   const params = useParams<{ subject: string }>();
   if (!subjectRegistry[params.subject ?? ""]) return <NotFoundLayout />;
@@ -411,6 +437,13 @@ function getPageTitle(path: string): string {
   if (match && subjectRegistry[match[1]]) {
     return `Grade 8 ${subjectRegistry[match[1]].name} Notes | ${SITE_NAME}`;
   }
+  const topicMatch = clean.match(/^\/grades\/grade-8\/([^/]+)\/([^/]+)$/);
+  if (topicMatch) {
+    const page = getTopicPage(topicMatch[1], topicMatch[2]);
+    if (page) {
+      return `${page.topicTitle} – Grade 8 ${page.subjectName} | ${SITE_NAME}`;
+    }
+  }
   return `Page not found | ${SITE_NAME}`;
 }
 
@@ -420,12 +453,15 @@ function getCanonicalPath(path: string): string | null {
   if (clean === "/" || clean === "/grades/grade-8") return clean;
   const match = clean.match(/^\/grades\/grade-8\/([^/]+)$/);
   if (match && subjectRegistry[match[1]]) return clean;
+  const topicMatch = clean.match(/^\/grades\/grade-8\/([^/]+)\/([^/]+)$/);
+  if (topicMatch && getTopicPage(topicMatch[1], topicMatch[2])) return clean;
   return null;
 }
 
 function PageMeta() {
   const [location] = useLocation();
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = getPageTitle(location);
 
     const canonicalPath = getCanonicalPath(location);
@@ -460,6 +496,10 @@ export default function App() {
         <Route path="/" component={HomePage} />
         <Route path="/grades/grade-8" component={Grade8Layout} />
         <Route path="/grades/grade-8/:subject" component={SubjectLayout} />
+        <Route
+          path="/grades/grade-8/:subject/:topic"
+          component={TopicLayout}
+        />
         <Route component={NotFoundLayout} />
       </Switch>
     </Router>

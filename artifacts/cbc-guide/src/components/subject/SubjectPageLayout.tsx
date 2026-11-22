@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import type { SubjectContent, SubjectResourceItem } from "../../types/subject";
 import { SUBJECT_COLOR_MAP } from "../../lib/subjectTheme";
 import InteractiveLearningModule from "./InteractiveLearningModule";
+import { getTopicPages } from "../../data/subjects/topicPages";
+import "./TopicPage.css";
 
 const CheckIcon = () => (
   <svg
@@ -161,6 +163,10 @@ export default function SubjectPageLayout({
   content: SubjectContent;
 }) {
   const c = SUBJECT_COLOR_MAP[content.colorKey];
+  const topicPages = getTopicPages(content.slug);
+  const readyTopics = topicPages.length;
+  const hasReadyItems = (items: SubjectResourceItem[]) =>
+    items.some((item) => !/coming soon|in preparation/i.test(item.meta ?? ""));
 
   return (
     <>
@@ -233,16 +239,20 @@ export default function SubjectPageLayout({
               </span>
               <span className="subject-hero-stat-label">Learning Outcomes</span>
             </div>
-            <div className="subject-hero-stat-divider" aria-hidden="true" />
-            <div className="subject-hero-stat">
-              <span
-                className="subject-hero-stat-number"
-                style={{ color: c.icon }}
-              >
-                {content.videos.length}
-              </span>
-              <span className="subject-hero-stat-label">Video Lessons</span>
-            </div>
+            {readyTopics > 0 && (
+              <>
+                <div className="subject-hero-stat-divider" aria-hidden="true" />
+                <div className="subject-hero-stat">
+                  <span
+                    className="subject-hero-stat-number"
+                    style={{ color: c.icon }}
+                  >
+                    {readyTopics}
+                  </span>
+                  <span className="subject-hero-stat-label">Lessons Ready</span>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -289,26 +299,55 @@ export default function SubjectPageLayout({
           </p>
 
           <div className="topics-grid">
-            {content.topics.map((topic, idx) => (
-              <div key={topic.title} className="topic-card">
-                <div
-                  className="topic-number"
-                  style={{ background: c.bg, color: c.icon }}
+            {content.topics.map((topic, idx) => {
+              const page = topicPages.find((p) => p.topicTitle === topic.title);
+              const inner = (
+                <>
+                  <div
+                    className="topic-number"
+                    style={{ background: c.bg, color: c.icon }}
+                  >
+                    {String(idx + 1).padStart(2, "0")}
+                  </div>
+                  <div>
+                    <div className="topic-title">{topic.title}</div>
+                    <p className="topic-desc">{topic.description}</p>
+                    <span
+                      className={
+                        page
+                          ? "topic-badge topic-badge--ready"
+                          : "topic-badge topic-badge--soon"
+                      }
+                    >
+                      {page ? "Lesson ready" : "Coming soon"}
+                    </span>
+                  </div>
+                </>
+              );
+
+              return page ? (
+                <Link
+                  key={topic.title}
+                  href={`/grades/grade-8/${content.slug}/${page.slug}`}
+                  className="topic-card topic-card--link"
                 >
-                  {String(idx + 1).padStart(2, "0")}
+                  {inner}
+                </Link>
+              ) : (
+                <div key={topic.title} className="topic-card topic-card--soon">
+                  {inner}
                 </div>
-                <div>
-                  <div className="topic-title">{topic.title}</div>
-                  <p className="topic-desc">{topic.description}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {content.learningModule ? (
-        <InteractiveLearningModule module={content.learningModule} />
+        <InteractiveLearningModule
+          module={content.learningModule}
+          variant="quizzes"
+        />
       ) : (
         <>
           <ResourceSection
@@ -334,20 +373,24 @@ export default function SubjectPageLayout({
           />
         </>
       )}
-      <ResourceSection
-        id="downloads"
-        title="Downloads"
-        iconKey="downloads"
-        items={content.downloads}
-        colorKey={content.colorKey}
-      />
-      <ResourceSection
-        id="video-lessons"
-        title="Video Lessons"
-        iconKey="videos"
-        items={content.videos}
-        colorKey={content.colorKey}
-      />
+      {hasReadyItems(content.downloads) && (
+        <ResourceSection
+          id="downloads"
+          title="Downloads"
+          iconKey="downloads"
+          items={content.downloads}
+          colorKey={content.colorKey}
+        />
+      )}
+      {hasReadyItems(content.videos) && (
+        <ResourceSection
+          id="video-lessons"
+          title="Video Lessons"
+          iconKey="videos"
+          items={content.videos}
+          colorKey={content.colorKey}
+        />
+      )}
 
       {/* FAQs */}
       <section className="faq-section" aria-labelledby="faq-heading">
