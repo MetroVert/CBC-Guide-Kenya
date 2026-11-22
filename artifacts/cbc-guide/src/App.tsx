@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Router, Route, Link, useLocation } from "wouter";
+import { Router, Route, Switch, Link, useLocation, useParams } from "wouter";
 import Grade8Page from "./pages/Grade8Page";
 import SubjectDetailPage from "./pages/SubjectDetailPage";
+import NotFound from "./pages/not-found";
 import { subjectRegistry } from "./data/subjects/registry";
 import "./index.css";
 
@@ -353,7 +354,30 @@ function Grade8Layout() {
   );
 }
 
+function NotFoundLayout() {
+  return (
+    <main className="inner-page">
+      <NotFound />
+      <footer
+        style={{
+          textAlign: "center",
+          padding: "40px 20px",
+          color: "#6b7280",
+          fontSize: "14px",
+          borderTop: "1px solid #e5e7eb",
+          marginTop: "60px",
+        }}
+      >
+        Designed & Developed by <strong>MetroVert</strong>
+      </footer>
+    </main>
+  );
+}
+
 function SubjectLayout() {
+  const params = useParams<{ subject: string }>();
+  if (!subjectRegistry[params.subject ?? ""]) return <NotFoundLayout />;
+
   return (
     <main className="inner-page">
       <SubjectDetailPage />
@@ -377,13 +401,6 @@ function SubjectLayout() {
 const SITE_NAME = "CBC Guide Kenya";
 const SITE_URL = "https://cbc-guide-kenya.vercel.app";
 
-function slugToTitle(slug: string) {
-  return slug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-}
-
 function getPageTitle(path: string): string {
   const clean = path.replace(/\/+$/, "") || "/";
   if (clean === "/") return `${SITE_NAME} – Notes & Practice for the Kenyan CBC`;
@@ -391,12 +408,10 @@ function getPageTitle(path: string): string {
     return `Grade 8 Subjects & Resources | ${SITE_NAME}`;
   }
   const match = clean.match(/^\/grades\/grade-8\/([^/]+)$/);
-  if (match) {
-    const slug = match[1];
-    const name = subjectRegistry[slug]?.name ?? slugToTitle(slug);
-    return `Grade 8 ${name} Notes | ${SITE_NAME}`;
+  if (match && subjectRegistry[match[1]]) {
+    return `Grade 8 ${subjectRegistry[match[1]].name} Notes | ${SITE_NAME}`;
   }
-  return SITE_NAME;
+  return `Page not found | ${SITE_NAME}`;
 }
 
 // Returns the official path for real pages, or null for unknown addresses.
@@ -414,6 +429,12 @@ function PageMeta() {
     document.title = getPageTitle(location);
 
     const canonicalPath = getCanonicalPath(location);
+
+    const robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    if (robots) {
+      robots.content = canonicalPath === null ? "noindex, follow" : "index, follow";
+    }
+
     let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (canonicalPath === null) {
       link?.remove();
@@ -435,9 +456,12 @@ export default function App() {
     <Router>
       <PageMeta />
       <Navbar />
-      <Route path="/" component={HomePage} />
-      <Route path="/grades/grade-8" component={Grade8Layout} />
-      <Route path="/grades/grade-8/:subject" component={SubjectLayout} />
+      <Switch>
+        <Route path="/" component={HomePage} />
+        <Route path="/grades/grade-8" component={Grade8Layout} />
+        <Route path="/grades/grade-8/:subject" component={SubjectLayout} />
+        <Route component={NotFoundLayout} />
+      </Switch>
     </Router>
   );
 }
